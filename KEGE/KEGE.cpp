@@ -1,8 +1,6 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
 #include "Task5.cpp"
+#include "Task11.cpp"
 int main()
 {
-	TASK_5();
+	TASK_11();
 }

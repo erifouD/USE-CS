@@ -1,6 +1,5 @@
-#include "Task5.cpp"
-#include "Task11.cpp"
+#include "Tasks.cpp"
 int main()
 {
-	TASK_11();
+	TASK_15();
 }

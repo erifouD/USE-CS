@@ -68,3 +68,19 @@ inline void TASK_17() {
 	}
 	cout << elems << " " << maxsum;
 }
+inline void TASK_25() {
+	for (int i = 123456789; i <= 223456789; i++) {
+		int counter = 0;
+		int last = 0;
+		for (int j = 2; j < i; j++) {
+			if (i % j == 0 && counter < 3) {
+				counter++;
+				last = j;
+			}
+			else break;
+		}
+		if (counter == 3) {
+			std::cout << i << " " << last << endl;
+		}
+	}
+}

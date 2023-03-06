@@ -1,5 +1,5 @@
 #include "Taski.cpp"
 int main()
 {
-	TASK_17();
+	TASK_25();
 }

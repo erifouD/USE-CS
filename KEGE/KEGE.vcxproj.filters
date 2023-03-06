@@ -18,7 +18,7 @@
     <ClCompile Include="KEGE.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tasks.cpp">
+    <ClCompile Include="Taski.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

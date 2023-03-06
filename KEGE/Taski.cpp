@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <fstream>
+#include <vector>
 #include <algorithm>
 using namespace std;
-void TASK_5() {
+inline void TASK_5() {
 	for (int i = 10000; i < 100000; i++) {
 		string temp = to_string(i);
 		int first, second;
@@ -16,8 +18,7 @@ void TASK_5() {
 		}
 	}
 }
-
-void TASK_11() {
+inline void TASK_11() {
 	string Temp("1");
 	Temp += string(98, '9');
 	while (Temp.find("19") + 1 || Temp.find("299") + 1 || Temp.find("3999") + 1) {
@@ -30,8 +31,7 @@ void TASK_11() {
 	}
 	cout << Temp;
 }
-
-void TASK_15() {
+inline void TASK_15() {
 	for (int A = 0; A < 500; A++) {
 		int counter = 0;
 		for (int x = 0; x < 500; x++) {
@@ -44,4 +44,27 @@ void TASK_15() {
 			return;
 		}
 	}
+}
+inline int TASK_16(int n) {
+	if (n == 1 || n == 2 || n == 3) return 1;
+	else if (n > 3) return TASK_16(n - 3) + TASK_16(n - 2);
+	else return 0;
+}
+inline void TASK_17() {
+	ifstream myfile;
+	vector<int> Nums;
+	int min_elem = 100000, maxsum = 0, elems = 0;
+	myfile.open("107_17.txt");
+	while (!myfile.eof()) {
+		string temp;
+		getline(myfile, temp);
+		Nums.push_back(stoi(temp));
+		if (min_elem > stoi(temp) && stoi(temp) % 21 == 0) min_elem = stoi(temp);
+	}
+	for (int i = 1; i < Nums.size(); i++) {
+		if (!(Nums[i] % min_elem == 0 || Nums[i - 1] % min_elem == 0)) continue;
+		elems++;
+		if (maxsum < Nums[i - 1] + Nums[i]) maxsum = Nums[i - 1] + Nums[i];
+	}
+	cout << elems << " " << maxsum;
 }
